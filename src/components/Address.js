@@ -1,10 +1,15 @@
 import { useState } from "react";
 
 const Address = (props) => {
+  console.log(props)
   const { Street_Address, City, ZipCode } = props.signupForm;
-  const [address, setaddress] = useState("");
-  const [city, setcity] = useState("");
-  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [address, setaddress] = useState(Street_Address);
+  const [city, setcity] = useState(City);
+  let checkpoint = true;
+  if(Street_Address !== '' && City !== '' && ZipCode !== ''){
+    checkpoint =false;
+  }
+  const [isButtonDisabled, setIsButtonDisabled] = useState(checkpoint);
 
   
   const [errorStreet,setErrorStreet]=useState("");

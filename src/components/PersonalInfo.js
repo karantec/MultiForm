@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 
 const PersonalInfo = (props) => {
+  
   const { email, full_name } = props.signupForm;
-  const [fullName, setFullName] = useState("");
-  const [Email, setEmail] = useState("");
+  const [fullName, setFullName] = useState(full_name);
+  const [Email, setEmail] = useState(email);
+  
+let checkpoint = true;
+  if(email !== '' && full_name !== ''){
+    checkpoint =false;
+  }
   const[Dob,setDob]=useState("");
-  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(checkpoint);
   const [errorFull,setErrorFull] = useState("");
   const [errorEmail , setErrorEmail] = useState("");
   const [errorDob , setErrorDob] = useState("");
