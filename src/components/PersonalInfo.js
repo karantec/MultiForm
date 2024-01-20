@@ -2,7 +2,6 @@ import React, { useState } from "react";
 const PersonalInfo = (props) => {
   console.log(props)
 
-  const { full_name, email, DateofBirth } = false;
 
   const [fullName, setFullName] = useState("");
   const [Email, setEmail] = useState("");

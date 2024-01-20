@@ -1,7 +1,6 @@
 import { useState } from "react";
 const Account = (props) => {
   console.log(props);
-  const { UserName, Password, ConfirmPassword } = false;
 
   const [Username, setUsername] = useState("");
   const userNameValidate = () => {
