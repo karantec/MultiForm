@@ -16,8 +16,8 @@
 7.Submission Guidelines
 8. Evaluation Criteria
 
-### Overview
-###This project is a solution to the Multi-Step Form Challenge, requiring the development of a React application with a multi-step form. The form includes client-side validation for each step, clear navigation, and relevant form fields.
+## Overview
+## This project is a solution to the Multi-Step Form Challenge, requiring the development of a React application with a multi-step form. The form includes client-side validation for each step, clear navigation, and relevant form fields.
 
 ##Features
 Multi-Step Navigation: The form has three steps, allowing users to navigate between them.
