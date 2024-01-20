@@ -30,10 +30,15 @@ Installation
 
 Copy code
 2.git clone https://github.com/karantec/Assignment1.git
+
 Install dependencies:
+
 npm install
+
 3. cd Assignment1
+   
 4.npm install
+
 Usage
 4.Run the application:
 5.npm start
