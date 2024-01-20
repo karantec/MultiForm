@@ -1,3 +1,4 @@
+
 # Multi-Step Form Challenge
  
  
@@ -28,14 +29,14 @@ Installation
 1.clone the repository:
 
 
-Copy code
+
 2.git clone https://github.com/karantec/Assignment1.git
 
 Install dependencies:
 
 npm install
 
-3. cd Assignment1
+1. cd Assignment1
    
 4.npm install
 
