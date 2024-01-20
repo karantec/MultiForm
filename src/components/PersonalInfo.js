@@ -1,18 +1,24 @@
 import React, { useState } from "react";
-const PersonalInfo = (props) => {
-  console.log(props)
-  const { full_name, email,  DateofBirth } = false;
 
+const PersonalInfo = (props) => {
+  const { email, full_name } = props.signupForm;
   const [fullName, setFullName] = useState("");
   const [Email, setEmail] = useState("");
-  
+  const[Dob,setDob]=useState("");
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [errorFull,setErrorFull] = useState("");
+  const [errorEmail , setErrorEmail] = useState("");
+  const [errorDob , setErrorDob] = useState("");
+
+ 
   const handleValidate = () => {
     if (fullName.trim() === "") {
-      alert("Enter Valid name");
+      setErrorFull("Enter Valid name");
     } else if (fullName.length <= 3 || fullName.length > 50) {
-      alert("Full name should be between 3 and 50 characters.");
+      setErrorFull("Full name should be between 3 and 50 characters.");
     } else {
-      return true
+      setErrorFull("");
+      return true;
     }
     // you can add more condition here
   };
@@ -20,62 +26,82 @@ const PersonalInfo = (props) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(Email)) {
-      alert("Enter Proper Email");
+      setErrorEmail("Enter Proper Email");
     } else {
-      if(handleValidate){
+      setErrorEmail("");
+      if (handleValidate) {
         handleInputChange();
       }
     }
 
     // you can add more condition here
   };
-
-  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const DobValidate = () => {
+    if (Dob.trim() === "") {
+      setErrorDob("Enter Enter valid Date of Birth");
+    } else {
+      setErrorDob("");
+      return true;
+    }
+    // you can add more condition here
+  };
 
   const handleInputChange = () => {
-
-
     setIsButtonDisabled(false);
   };
-  
-    return (
-      <>
+
+  return (
+    <>
       <div>
-      
-      <h2 className="text-2xl font-bold mb-4">Personal Info</h2>
-  <div className="mb-3">
-    <label  className="block text-sm font-medium text-gray-700">Full Name</label>
-    <input
-      type="text"
-       className="mt-1 p-2 border  'border-red-500' : 'border-gray-300'
+        <h2 className="text-2xl font-bold mb-4
+         text-center">Personal Info</h2>
+        <div className="mb-3">
+          <label className="block text-sm font-medium text-black">
+            Full Name
+          </label>
+          <input
+            required
+            type="text"
+            className="mt-2 p-2 border  'border-red-500' : 'border-gray-300'
            rounded-md focus:outline-none focus:ring focus:border-blue-300 w-full"
-          id="full_name" name='full_name' value={full_name} 
-      onBlur={handleValidate}
+            id="full_name"
+            name="full_name"
+            onBlur={handleValidate}
+            value={full_name}
             onChange={(e) => {
               setFullName(e.target.value);
+              props.handleChange(e);
             }}
-       placeholder='Full Name'
-    />
-      
-  </div>
-  <div className="mb-3">
-    <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-    <input
-      type="email"
-      className="`mt-1 p-2 border ${
+            placeholder="Full Name"
+          />
+        </div>
+        <h1 style={{color:"red"}}>{errorFull}</h1>
+        <div className="mb-3">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-black"
+          >
+            Email
+          </label>
+          <input
+            required
+            type="email"
+            className="`mt-2 p-2 border ${
             errors.email ? 'border-red-500' : 'border-gray-300'
            rounded-md focus:outline-none focus:ring focus:border-blue-300 w-full"
             id="Email"
             name="email"
             placeholder="email"
             onBlur={EmailhandleValidate}
+            value={email}
             onChange={(e) => {
               setEmail(e.target.value);
+              props.handleChange(e);
             }}
-    />
-    
-  </div>
-  <div className="relative max-w-sm">
+          />
+           <h1 style={{color:"red"}}>{errorEmail}</h1>
+        </div>
+        <div className="relative max-w-sm">
           <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
             <svg
               className="w-4 h-4 text-gray-500 dark:text-gray-400"
@@ -89,20 +115,24 @@ const PersonalInfo = (props) => {
           </div>
           <label
             htmlFor="Date of Birth"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-black"
           >
             Date of Birth
           </label>
           <input
             required
             type="date"
-            className="bg-gray-50 border  border-red-500' : 'border-gray-300'  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border  mt-2 border-red-500' : 'border-gray-300'  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             id="DateofBirth"
             name="DateofBirth"
+            onBlur={DobValidate}
             placeholder="Select date"
-            onChange={props.handleChange}
-            value={DateofBirth}
+            onChange={(e) => {
+              setDob(e.target.value);
+              props.handleChange(e);
+            }}
           />
+           <h1 style={{color:"red"}}>{errorDob}</h1>
         </div>
       </div>
       <button
@@ -112,8 +142,8 @@ const PersonalInfo = (props) => {
       >
         Next
       </button>
-      </>
-    );
-  };
-  
-  export default PersonalInfo
+    </>
+  );
+};
+
+export default PersonalInfo;
