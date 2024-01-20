@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 const PersonalInfo = (props) => {
   console.log(props)
-
+  const { full_name, email,  DateofBirth } = false;
 
   const [fullName, setFullName] = useState("");
   const [Email, setEmail] = useState("");
@@ -49,7 +49,7 @@ const PersonalInfo = (props) => {
       type="text"
        className="mt-1 p-2 border  'border-red-500' : 'border-gray-300'
            rounded-md focus:outline-none focus:ring focus:border-blue-300 w-full"
-      id="full_name" name='full_name' value={full_name} 
+          id="full_name" name='full_name' value={full_name} 
       onBlur={handleValidate}
             onChange={(e) => {
               setFullName(e.target.value);
