@@ -52,9 +52,9 @@ const Address = (props) => {
       <>
       <div>
       
-       <h2 className="text-2xl font-bold mb-4">Address Information</h2>
+       <h2 className="text-2xl font-bold mb-4 text-white">Address Information</h2>
   <div className="mb-3">
-    <label htmlFor="first_name" className="block text-sm font-medium text-black">Street Address</label>
+    <label htmlFor="first_name" className="block text-sm font-medium text-white">Street Address</label>
     <input
           required
           type="text"
@@ -71,7 +71,7 @@ const Address = (props) => {
          <h1 style={{color:"red"}}>{errorStreet}</h1>
   </div>
   <div className="mb-3">
-    <label htmlFor="last_name" className="block text-sm font-medium text-black">City</label>
+    <label htmlFor="last_name" className="block text-sm font-medium text-white">City</label>
     <input
           required
           type="text"
@@ -89,7 +89,7 @@ const Address = (props) => {
          <h1 style={{color:"red"}}>{errorCity}</h1>
       
   </div>
-  <label htmlFor="State" className="block text-sm font-medium text-black">State</label>
+  <label htmlFor="State" className="block text-sm font-medium text-white">State</label>
   <select
        className="form-select mt-2 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300"
         name="State"
@@ -102,7 +102,7 @@ const Address = (props) => {
   </select>
 
   <div className="mb-3">
-    <label htmlFor="Zip Code" className="block text-sm font-medium text-gray-700">Zip Code</label>
+    <label htmlFor="Zip Code" className="block text-sm font-medium text-white">Zip Code</label>
     <input
           required
           type="Number"

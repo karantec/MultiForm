@@ -52,9 +52,9 @@ const Account = (props) => {
     return (<>
       <div>
        
-       <h2 className="text-md font-bold mb-4 text-center font-serif ">Account Setup</h2>
+       <h2 className="text-md font-bold mb-4 text-center font-serif text-white ">Account Setup</h2>
   <div className="mb-3">
-    <label htmlFor="first_name" className="block text-md font-medium text-black " >Username</label>
+    <label htmlFor="first_name" className="block text-md font-medium text-white " >Username</label>
     <input
           type="text"
           className="mt-2 p-2 border 
@@ -72,7 +72,7 @@ const Account = (props) => {
         <h1 style={{color:"red"}}>{errorUser}</h1>
   </div>
   <div className="mb-3">
-    <label htmlFor="last_name" className="text-md font-bold mb-4 text-center font-serif">Password</label>
+    <label htmlFor="last_name" className="text-md font-bold mb-4 text-center text-white font-serif">Password</label>
     <input
           type="password"
           className="mt-2 p-2 border 
@@ -89,7 +89,7 @@ const Account = (props) => {
      <h1 style={{color:"red"}}>{errorPass}</h1>
   </div>
   <div className="mb-3">
-  <label htmlFor="last_name" className="text-md font-bold mb-4 text-center font-serif">Password</label>
+  <label htmlFor="last_name" className="text-md font-bold mb-4 text-center text-white font-serif">Password</label>
   <input
           type="password"
           className="mt-2 p-2 border 'border-red-500' : 'border-gray-300'

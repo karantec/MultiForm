@@ -57,8 +57,8 @@ const backStep=()=>{
     <>
    <div>
     
-   <div className= "bg-blue-500 hover:bg-blue-700  min-h-screen flex justify-center items-center">
-  <div className="card p-3 w-1/2 mt-5 bg-white rounded-lg drop-shadow-md md:drop-shadow-xl">
+   <div className= " bg-gradient-to-r from-indigo-500  min-h-screen flex justify-center items-center">
+  <div className="   bg-gradient-to-l from-gray-700 via-gray-900 to-black card p-3 w-1/2 mt-5  rounded-lg drop-shadow-md md:drop-shadow-xl">
   {
       {
         1: <PersonalInfo   signupForm={signupForm} handleChange={handleChange} back = {backStep}  next ={nextStep} />,

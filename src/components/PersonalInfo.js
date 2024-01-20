@@ -60,9 +60,9 @@ let checkpoint = true;
     <>
       <div>
         <h2 className="text-2xl font-bold mb-4
-         text-center">Personal Info</h2>
+         text-center text-white">Personal Info</h2>
         <div className="mb-3">
-          <label className="block text-sm font-medium text-black">
+          <label className="block text-sm font-medium text-white">
             Full Name
           </label>
           <input
@@ -72,6 +72,7 @@ let checkpoint = true;
            rounded-md focus:outline-none focus:ring focus:border-blue-300 w-full"
             id="full_name"
             name="full_name"
+            
             onBlur={handleValidate}
             value={full_name}
             onChange={(e) => {
@@ -81,11 +82,11 @@ let checkpoint = true;
             placeholder="Full Name"
           />
         </div>
-        <h1 style={{color:"red"}}>{errorFull}</h1>
+        <h1 style={{color:"red",fontWeight:"bold"}}>{errorFull}</h1>
         <div className="mb-3">
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-black"
+            className="block text-sm font-medium text-white"
           >
             Email
           </label>
@@ -105,7 +106,7 @@ let checkpoint = true;
               props.handleChange(e);
             }}
           />
-           <h1 style={{color:"red"}}>{errorEmail}</h1>
+           <h1 style={{color:"red",fontWeight:"bold"}}>{errorEmail}</h1>
         </div>
         <div className="relative max-w-sm">
           <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
@@ -121,7 +122,7 @@ let checkpoint = true;
           </div>
           <label
             htmlFor="Date of Birth"
-            className="block text-sm font-medium text-black"
+            className="block text-sm font-medium text-white"
           >
             Date of Birth
           </label>
@@ -138,7 +139,7 @@ let checkpoint = true;
               props.handleChange(e);
             }}
           />
-           <h1 style={{color:"red"}}>{errorDob}</h1>
+           <h1 style={{color:"red",fontWeight:"bold"}}>{errorDob}</h1>
         </div>
       </div>
       <button
